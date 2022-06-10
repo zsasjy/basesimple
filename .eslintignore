@@ -1,0 +1,5 @@
+node_modules
+.husky
+.eslintrc.js
+CHANGELOG.md
+README.md
