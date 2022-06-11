@@ -1,16 +1,8 @@
 import React, { ReactNode, FC } from 'react';
+import { IMenuItem } from 'src/interface';
 import { NavigateFunction } from 'react-router-dom';
 import routerConfig, { IRouterItem } from './router.config';
 import * as IconPark from '@ant-design/icons';
-
-export interface IMenuItem {
-    label: React.ReactNode;
-    key?: React.Key;
-    path?: string;
-    children?: IMenuItem[];
-    icon: ReactNode;
-    onClick?: () => void;
-}
 
 interface IconProps {
     name: string;

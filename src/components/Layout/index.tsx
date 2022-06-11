@@ -1,23 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import { Breadcrumb, Layout, Menu } from 'antd';
+import React, { useState, useEffect, useContext } from 'react';
+import { Breadcrumb, Layout, Menu, message } from 'antd';
 import { initMenuItem } from 'src/config/menus.config';
 import { useNavigate, Outlet } from 'react-router-dom';
-import { getUrlSearchParams } from 'src/utils';
+import { hasUrlSearchParams } from 'src/utils';
+import { ProjectInfoContext } from 'src/App';
 import './index.less';
 
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function LayoutContainer() {
     const [collapsed, setCollapsed] = useState(false);
-    const hideNav = getUrlSearchParams('hideNav');
+    const hideNav = hasUrlSearchParams('hideNav');
     const navigate = useNavigate();
+    const { userInfo, menuList } = useContext(ProjectInfoContext);
     const menusList = initMenuItem(navigate);
     const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
 
     useEffect(() => {
+        if (!userInfo.username) {
+            message.warning('当前未登录，请登录后访问');
+            navigate(
+                `/login?direction=${encodeURI(
+                    window.location.pathname + window.location.search + window.location.hash,
+                )}`,
+            );
+        }
+    }, [userInfo]);
+
+    useEffect(() => {
+        console.log('menuList : ', menuList);
         console.log(location.pathname);
         setSelectedKeys([`${location.pathname}`]);
-    }, [location.pathname]);
+    }, [location.pathname, menuList]);
 
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -32,7 +46,7 @@ export default function LayoutContainer() {
                         theme="dark"
                         defaultOpenKeys={[`/${location.pathname.split('/')[1]}`]}
                         mode="inline"
-                        items={menusList}
+                        items={menusList as any}
                         selectedKeys={selectedKeys}
                     />
                 </Sider>

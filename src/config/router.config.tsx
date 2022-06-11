@@ -1,6 +1,7 @@
 import React, { CSSProperties, lazy, LazyExoticComponent, Suspense } from 'react';
 import { RouteObject } from 'react-router-dom';
 import { Spin } from 'antd';
+import Login from '../components/Login';
 
 const initStyle = {
     minHeight: 'calc(100vh - 156px)',
@@ -56,10 +57,11 @@ const baseRouter = (style?: CSSProperties) => [
     },
     {
         path: '/login',
-        element: lazyLoad(
-            lazy(() => import('../components/Login')),
-            style,
-        ),
+        element: <Login />,
+        // lazyLoad(
+        //     lazy(() => import('../components/Login')),
+        //     style,
+        // ),
         hidden: true,
     },
     { path: '*', element: lazyLoad(lazy(() => import('../components/NotFound'))), hidden: true },

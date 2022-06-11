@@ -17,7 +17,8 @@
         "jsx": "react-jsx",
         "paths": {
             "src/*": ["./src/*"],
-            "common/*": ["./src/common/*"]
+            "common/*": ["./src/common/*"],
+            "hooks/*": ["./src/hooks/*"]
         }
     },
     "include": ["src"],
