@@ -58,10 +58,14 @@ const baseRouter = (style?: CSSProperties) => [
     {
         path: '/login',
         element: <Login />,
-        // lazyLoad(
-        //     lazy(() => import('../components/Login')),
-        //     style,
-        // ),
+        hidden: true,
+    },
+    {
+        path: '/register',
+        element: lazyLoad(
+            lazy(() => import('../components/Register')),
+            style,
+        ),
         hidden: true,
     },
     { path: '*', element: lazyLoad(lazy(() => import('../components/NotFound'))), hidden: true },

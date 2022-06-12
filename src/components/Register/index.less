@@ -1,0 +1,95 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(src/assets/login_bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    .register-wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .register-header{
+            color: #FFF;
+            padding: 60px 0 30px;
+            .register-title{
+                font-size: 36px;
+                text-align: center;
+            }
+            .register-description{
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+        .register-content{
+            width: 400px;
+            // height: 500px;
+            background-color: #FFFFFF;
+            padding: 16px 30px;
+            min-height: 400px;
+            position: relative;
+            .register-form {
+                overflow: hidden;
+                .register-form-button{
+                    width: 100%;
+                    height: 36px;
+                }
+                .field {
+                    margin-top: 12px;
+                }
+                .register-input-captcha{
+                    width: 67%;
+                }
+                .register-captcha{
+                    width: 30%;
+                    float: right;
+                    height: 40px;
+                    cursor: pointer;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .register-captcha-btn{
+                    height: 40px;
+                    float: right;
+                }
+                .register-form-label{
+                    margin-top: 14px;
+                    font-size: 16px;
+                    color: #282828;
+                    font-weight: 500;
+                    padding-bottom: 20px;
+                    border-bottom: 1px solid #eeeeee;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .register-form-label-title{
+                        font-weight: 700;
+                    }
+                    .register-form-label-extra{
+                        font-size: 14px;
+                    }
+                }
+                .register-info{
+                    color: #999999;
+                    font-size: 12px;
+                    margin-bottom: 26.5px;
+                    .register-qrcode{
+                        height: 290px;
+                        overflow: hidden;
+                        img{
+                            width: 216px;
+                            margin-top: 15px;
+                        }
+                    }
+                    .register-qrcode-desc{
+                        width: 210px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    }
+}

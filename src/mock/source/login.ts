@@ -12,6 +12,7 @@ export default [
                     username: 'test',
                     authname: 'test',
                     staff_id: '12138',
+                    avater: 'https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png',
                 },
                 status: 0,
             };

@@ -4,6 +4,7 @@ import { initMenuItem } from 'src/config/menus.config';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { hasUrlSearchParams } from 'src/utils';
 import { ProjectInfoContext } from 'src/App';
+import HeaderContainer from './components/Header';
 import './index.less';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -52,7 +53,9 @@ export default function LayoutContainer() {
                 </Sider>
             )}
             <Layout className="layout-wrapper">
-                <Header className="layout-header" style={{ padding: 0 }} />
+                <Header className="layout-header" style={{ padding: 0 }}>
+                    <HeaderContainer info={userInfo} />
+                </Header>
                 <Content style={{ margin: '0 16px' }}>
                     <Breadcrumb style={{ margin: '12px 0' }}>
                         <Breadcrumb.Item>首页</Breadcrumb.Item>

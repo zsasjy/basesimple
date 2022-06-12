@@ -8,8 +8,9 @@ import QRCodeSvg from 'src/assets/qr-code.svg';
 import Captcha from 'src/assets/captcha.png';
 import { cookie, getUrlSearchParams } from 'src/utils';
 import './index.less';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { ProjectInfoContext } from 'src/App';
+import { useLogin } from 'src/hooks/useLogin';
 
 const { TabPane } = Tabs;
 
@@ -30,14 +31,13 @@ export default function Login() {
     const { userInfo } = useContext(ProjectInfoContext);
     const [loading, setLoading] = useState(false);
     const sourceUrl = getUrlSearchParams('direction') ?? '/';
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [form] = Form.useForm<IFormInfo>();
     const [loginType, setLoginType] = useState<Type>(Type.QRCODE);
-
     useEffect(() => {
         if (userInfo.username) {
             message.info('当前用户已登录，请勿重复登录');
-            navigate('/');
+            window.location.href = '/';
         }
     }, [userInfo]);
 
@@ -57,7 +57,7 @@ export default function Login() {
                 cookie.setCookie(cookie.SESSION_TOKEN, res);
                 remember && cookie.setCookie(cookie.SESSION_REMEMBER, res, { expires: 15 });
                 setLoading(false);
-                navigate(sourceUrl);
+                window.location.href = sourceUrl;
             })
             .catch(err => {
                 setLoading(false);
@@ -150,7 +150,12 @@ export default function Login() {
                     initialValues={{ remember: true, username: 'test', password: 'test123' }}
                     onFinish={onSubmitLogin}
                 >
-                    <Tabs defaultActiveKey="1">
+                    <Tabs
+                        defaultActiveKey="1"
+                        onChange={() => {
+                            form.resetFields();
+                        }}
+                    >
                         <TabPane tab={<div className="login-tabs">密码登录</div>} key="1">
                             {renderShortMessage()}
                         </TabPane>
@@ -162,9 +167,11 @@ export default function Login() {
                         <Form.Item name="remember" valuePropName="checked" noStyle>
                             <Checkbox>保存账号</Checkbox>
                         </Form.Item>
-                        <a style={{ float: 'right' }} onClick={() => message.info('你真蠢！！！')}>
-                            忘记密码
-                        </a>
+                        <div style={{ float: 'right' }}>
+                            <a onClick={() => message.info('你真蠢！！！')}>忘记密码</a>
+                            <i style={{ margin: '0px 12px' }}>|</i>
+                            <Link to="/register">注册</Link>
+                        </div>
                     </Form.Item>
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
@@ -199,7 +206,7 @@ export default function Login() {
                 </div>
                 <div className="login-content">
                     <Tooltip placement="right" title={TypeImageTip[loginType]}>
-                        <div className="login-register" onClick={changeLoginType}>
+                        <div className="login-type" onClick={changeLoginType}>
                             <img
                                 className="login-icon"
                                 src={loginType === Type.ACCOUNT ? QRCodeSvg : PcLoginSvg}
