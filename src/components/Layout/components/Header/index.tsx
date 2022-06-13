@@ -56,7 +56,7 @@ export default function HeaderContainer(props: IProps) {
             <div className="header-wrapper"></div>
             <div className="header-personal">
                 <Dropdown
-                    trigger={['click']}
+                    trigger={['hover']}
                     placement="bottomRight"
                     overlay={<Menu items={menus} />}
                 >
