@@ -80,22 +80,24 @@ export default function Register() {
     };
 
     return (
-        <div className="register">
-            <div className="register-wrapper">
-                <div className="register-header">
-                    <div className="register-title">XXXX管理系统</div>
-                    {/* <div className='login-description'>登录站酷网，与1400万+ 名设计创意人一起交流设计、分享快乐吧！</div> */}
-                </div>
-                <div className="register-content">
-                    <div className="register-form">
-                        <div className="register-form-label">
-                            <div className="register-form-label-title">注册</div>
-                            <div className="register-form-label-extra">
-                                <span>已有账号，</span>
-                                <Link to="/login">返回登录</Link>
+        <div className="container">
+            <div className="container-wrapper">
+                <div className="register-wrapper">
+                    <div className="register-header">
+                        <div className="register-title">XXXX管理系统</div>
+                        {/* <div className='login-description'>登录站酷网，与1400万+ 名设计创意人一起交流设计、分享快乐吧！</div> */}
+                    </div>
+                    <div className="register-content">
+                        <div className="register-form">
+                            <div className="register-form-label">
+                                <div className="register-form-label-title">注册</div>
+                                <div className="register-form-label-extra">
+                                    <span>已有账号，</span>
+                                    <Link to="/login">返回登录</Link>
+                                </div>
                             </div>
+                            <div className="register-info">{renderForm()}</div>
                         </div>
-                        <div className="register-info">{renderForm()}</div>
                     </div>
                 </div>
             </div>

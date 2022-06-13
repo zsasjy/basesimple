@@ -1,102 +1,17 @@
-.login {
-    width: 100vw;
-    height: 100vh;
+@import '../../styles/common.less';
+
+@prefix: login;
+
+.container{
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background-image: url(src/assets/login_bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    .login-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .login-header{
-            color: #FFF;
-            padding: 60px 0 30px;
-            .login-title{
-                font-size: 36px;
-                text-align: center;
-            }
-            .login-description{
-                font-size: 18px;
-                text-align: center;
-            }
-        }
-        .login-content{
-            width: 400px;
-            // height: 500px;
-            background-color: #FFFFFF;
-            padding: 16px 30px;
-            min-height: 400px;
-            position: relative;
-            .login-type{
-                position: absolute;
-                top: 16px;
-                right: 16px;
-                cursor: pointer;
-                z-index: 99;
-                .login-icon{
-                    width: 48px;
-                    height: 48px;
-                }
-            }
-            .login-form {
-                overflow: hidden;
-                .login-form-button{
-                    width: 100%;
-                    height: 36px;
-                }
-                .field {
-                    margin-top: 12px;
-                }
-                .login-input-captcha{
-                    width: 67%;
-                }
-                .login-captcha{
-                    width: 30%;
-                    float: right;
-                    height: 40px;
-                    cursor: pointer;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                .login-captcha-btn{
-                    height: 40px;
-                    float: right;
-                }
-                .login-form-label{
-                    margin-top: 14px;
-                    font-size: 16px;
-                    color: #282828;
-                    font-weight: 500;
-                    padding-bottom: 20px;
-                    border-bottom: 1px solid #eeeeee;
-                }
-                .login-info{
-                    text-align: center;
-                    color: #999999;
-                    font-size: 12px;
-                    margin-bottom: 26.5px;
-                    .login-qrcode{
-                        height: 290px;
-                        overflow: hidden;
-                        img{
-                            width: 216px;
-                            margin-top: 15px;
-                        }
-                    }
-                    .login-qrcode-desc{
-                        width: 210px;
-                        margin: 0 auto;
-                    }
-                }
-            }
-        }
-    }
+    .container-wrapper(@prefix);
 }
-.login-tabs{
+.@{prefix}-tabs{
     color: #282828;
     font-weight: 500;
     font-size: 16px;

@@ -198,22 +198,24 @@ export default function Login() {
     }, [loginType]);
 
     return (
-        <div className="login">
-            <div className="login-wrapper">
-                <div className="login-header">
-                    <div className="login-title">XXXX管理系统</div>
-                    {/* <div className='login-description'>登录站酷网，与1400万+ 名设计创意人一起交流设计、分享快乐吧！</div> */}
-                </div>
-                <div className="login-content">
-                    <Tooltip placement="right" title={TypeImageTip[loginType]}>
-                        <div className="login-type" onClick={changeLoginType}>
-                            <img
-                                className="login-icon"
-                                src={loginType === Type.ACCOUNT ? QRCodeSvg : PcLoginSvg}
-                            />
-                        </div>
-                    </Tooltip>
-                    <div className="login-form">{renderLoginMode}</div>
+        <div className="container">
+            <div className="container-wrapper">
+                <div className="login-wrapper">
+                    <div className="login-header">
+                        <div className="login-title">XXXX管理系统</div>
+                        {/* <div className='login-description'>登录站酷网，与1400万+ 名设计创意人一起交流设计、分享快乐吧！</div> */}
+                    </div>
+                    <div className="login-content">
+                        <Tooltip placement="right" title={TypeImageTip[loginType]}>
+                            <div className="login-type" onClick={changeLoginType}>
+                                <img
+                                    className="login-icon"
+                                    src={loginType === Type.ACCOUNT ? QRCodeSvg : PcLoginSvg}
+                                />
+                            </div>
+                        </Tooltip>
+                        <div className="login-form">{renderLoginMode}</div>
+                    </div>
                 </div>
             </div>
         </div>
