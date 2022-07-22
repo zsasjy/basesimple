@@ -8,6 +8,7 @@ const pathResolve = (dir: string): string => {
 };
 
 export default defineConfig({
+    base: '/basesimple',
     plugins: [
         react(),
         viteMockServe({
@@ -30,6 +31,19 @@ export default defineConfig({
         preprocessorOptions: {
             less: {
                 javascriptEnabled: true,
+            },
+        },
+    },
+    build: {
+        outDir: './docs',
+        minify: 'terser',
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    antd: ['antd'],
+                    axios: ['axios'],
+                },
             },
         },
     },
