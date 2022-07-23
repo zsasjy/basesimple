@@ -10239,9 +10239,9 @@ const initStyle = {
             element: lazyLoad(
                 react.exports.lazy(() =>
                     __vitePreload(
-                        () => import('./index.1c3c4c10.js'),
+                        () => import('./index.472d7a67.js'),
                         [
-                            'assets/index.1c3c4c10.js',
+                            'assets/index.472d7a67.js',
                             'assets/antd.19220ac7.js',
                             'assets/axios.58752079.js',
                         ],
@@ -10256,9 +10256,9 @@ const initStyle = {
             element: lazyLoad(
                 react.exports.lazy(() =>
                     __vitePreload(
-                        () => import('./index.f4cfbf56.js'),
+                        () => import('./index.33283ca1.js'),
                         [
-                            'assets/index.f4cfbf56.js',
+                            'assets/index.33283ca1.js',
                             'assets/antd.19220ac7.js',
                             'assets/axios.58752079.js',
                         ],
@@ -10273,9 +10273,9 @@ const initStyle = {
             element: lazyLoad(
                 react.exports.lazy(() =>
                     __vitePreload(
-                        () => import('./index.8498bbf9.js'),
+                        () => import('./index.3e79b5ec.js'),
                         [
-                            'assets/index.8498bbf9.js',
+                            'assets/index.3e79b5ec.js',
                             'assets/index.559454a0.css',
                             'assets/antd.19220ac7.js',
                             'assets/SafetyOutlined.57d004cf.js',
@@ -10293,9 +10293,9 @@ const initStyle = {
             element: lazyLoad(
                 react.exports.lazy(() =>
                     __vitePreload(
-                        () => import('./index.de908105.js'),
+                        () => import('./index.f43297ac.js'),
                         [
-                            'assets/index.de908105.js',
+                            'assets/index.f43297ac.js',
                             'assets/index.b16d575f.css',
                             'assets/antd.19220ac7.js',
                             'assets/SafetyOutlined.57d004cf.js',
@@ -10312,9 +10312,9 @@ const initStyle = {
             element: lazyLoad(
                 react.exports.lazy(() =>
                     __vitePreload(
-                        () => import('./index.508eb9d6.js'),
+                        () => import('./index.714b536f.js'),
                         [
-                            'assets/index.508eb9d6.js',
+                            'assets/index.714b536f.js',
                             'assets/antd.19220ac7.js',
                             'assets/axios.58752079.js',
                         ],
@@ -10419,7 +10419,7 @@ setupProdMockServer(),
         jsx(React.StrictMode, {
             children: jsx(Provider, {
                 store: store,
-                children: jsx(BrowserRouter, { children: jsx(App, {}) }),
+                children: jsx(BrowserRouter, { basename: '/basesimple', children: jsx(App, {}) }),
             }),
         }),
         document.getElementById('root'),

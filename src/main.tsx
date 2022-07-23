@@ -17,7 +17,7 @@ setupProdMockServer();
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.NODE_ENV === 'development' ? '/' : '/basesimple'}>
                 <App />
             </BrowserRouter>
         </Provider>
