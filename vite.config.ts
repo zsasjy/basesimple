@@ -8,7 +8,8 @@ const pathResolve = (dir: string): string => {
 };
 
 export default defineConfig({
-    base: process.env.NODE_ENV === 'development' ? '/' : '/basesimple',
+    mode: process.env.NODE_ENV,
+    base: process.env.NODE_ENV === 'development' ? '/' : '/basesimple/',
     plugins: [
         react(),
         viteMockServe({
