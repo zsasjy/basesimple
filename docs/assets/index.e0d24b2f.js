@@ -10296,7 +10296,7 @@ const initStyle = {
                         () => import('./index.f43297ac.js'),
                         [
                             'assets/index.f43297ac.js',
-                            'assets/index.b16d575f.css',
+                            'assets/index.bf6eb7da.css',
                             'assets/antd.19220ac7.js',
                             'assets/SafetyOutlined.57d004cf.js',
                             'assets/axios.58752079.js',
