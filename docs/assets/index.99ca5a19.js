@@ -1,7 +1,7 @@
-import { E as t } from './index.e0d24b2f.js';
+import { E as t } from './index.440a5692.js';
 import { j as i } from './antd.19220ac7.js';
 import './axios.58752079.js';
-function e() {
+function a() {
     return i(t, {
         icon: '/basesimple/assets/loading_failed.8386b999.svg',
         title: '页面不存在',
@@ -11,4 +11,4 @@ function e() {
         fullHeight: !0,
     });
 }
-export { e as default };
+export { a as default };

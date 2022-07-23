@@ -81,11 +81,11 @@ import {
     r as Ve,
     b as Le,
     c as be,
-    h as ye,
-    d as Ce,
+    d as ye,
+    h as Ce,
     P as Be,
     O as Re,
-} from './index.e0d24b2f.js';
+} from './index.440a5692.js';
 import { M as Ee, S as Oe } from './SafetyOutlined.57d004cf.js';
 import './axios.58752079.js';
 var Ne = {
@@ -19044,23 +19044,22 @@ const wI = e => {
     };
 function LI(t) {
     const { info: c } = t,
-        a = () => {
-            be.removeCookie(be.SESSION_REMEMBER),
-                be.removeCookie(be.SESSION_TOKEN),
-                (window.location.href = '/login');
+        a = Le(),
+        r = () => {
+            ye.removeCookie(ye.SESSION_REMEMBER), ye.removeCookie(ye.SESSION_TOKEN), a('/login');
         },
-        r = e.exports.useMemo(
+        l = e.exports.useMemo(
             () => [
                 {
                     key: 'personal',
-                    label: me(Le, {
+                    label: me(be, {
                         to: '/',
                         children: [fe(Me, { className: 'header-menu-icon' }), '个人中心'],
                     }),
                 },
                 {
                     key: 'setting',
-                    label: me(Le, {
+                    label: me(be, {
                         to: '/',
                         children: [fe(WN, { className: 'header-menu-icon' }), '设置'],
                     }),
@@ -19068,7 +19067,7 @@ function LI(t) {
                 {
                     key: 'quit',
                     label: me('a', {
-                        onClick: a,
+                        onClick: r,
                         children: [fe(rL, { className: 'header-menu-icon' }), '退出'],
                     }),
                 },
@@ -19084,7 +19083,7 @@ function LI(t) {
                 children: fe(ue, {
                     trigger: ['hover'],
                     placement: 'bottomRight',
-                    overlay: fe(pe, { items: r }),
+                    overlay: fe(pe, { items: l }),
                     children: me('div', {
                         className: 'header-dropdown',
                         children: [
@@ -19107,8 +19106,8 @@ function LI(t) {
 const { Header: bI, Content: yI, Footer: CI, Sider: BI } = xe;
 function RI() {
     const [t, c] = e.exports.useState(!1),
-        a = ye('hideNav'),
-        r = Ce(),
+        a = Ce('hideNav'),
+        r = Le(),
         { userInfo: l, menuList: n } = e.exports.useContext(Be),
         o = ((e, t) =>
             t && t.length > 0

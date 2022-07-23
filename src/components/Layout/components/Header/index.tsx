@@ -12,11 +12,11 @@ interface IProps {
 
 export default function HeaderContainer(props: IProps) {
     const { info } = props;
-
+    const navigate = useNavigate();
     const onLogout = () => {
         cookie.removeCookie(cookie.SESSION_REMEMBER);
         cookie.removeCookie(cookie.SESSION_TOKEN);
-        window.location.href = '/login';
+        navigate('/login');
     };
     const menus = useMemo(
         () => [
